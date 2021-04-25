@@ -1,0 +1,14 @@
+{% extends 'partials/app.html' %}
+
+{% block title %}
+    Post {{ post['id'] }}
+{% endblock %}
+
+{% block header %}
+    <h1>Post {{ post['title'] }}</h1>
+{% endblock %}
+
+{% block content %}
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <p>{{ post['content'] }}</p>
+{% endblock %}}

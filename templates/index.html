@@ -1,0 +1,22 @@
+{% extends 'partials/app.html' %}
+
+{% block title %}
+    Welcome to FlaskBlog
+{% endblock %}
+
+{% block header %}
+    <h1>Welcome to FlaskBlog</h1>
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <a href="{{ url_for('post', postId=post['id']) }}">
+            <h2>{{ post['title'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <a href="{{ url_for('postEdit', id=post['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}
